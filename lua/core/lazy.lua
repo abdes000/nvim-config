@@ -35,3 +35,6 @@ require("lazy").setup({
       { import = "plugins" },
     },
   })
+
+-- Initialize lazy.nvim with collected specs
+require("lazy").setup(plugins)
