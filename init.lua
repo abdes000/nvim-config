@@ -1,4 +1,3 @@
--- lua/bootstrap.lua
 -- Bootstrap lazy.nvim plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -16,26 +15,21 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
-
 -- Setup lazy.nvim
 require("lazy").setup({
-    defaults = {
-      lazy = true, -- load plugins lazily by default
-    },
-    install = {
-      colorscheme = { "tokyonight", "gruvbox" },
-    },
-    checker = { enabled = true },
-    ui = {
-      border = "rounded",
-    },
-    spec = {
-      -- import your plugins
-      { import = "plugins" },
-      { import = "core"}
-    },
-  })
-
--- Initialize lazy.nvim with collected specs
--- require("lazy").setup("plugins")
+  defaults = {
+    lazy = true, -- load plugins lazily by default
+  },
+  install = {
+    colorscheme = { "tokyonight", "gruvbox" },
+  },
+  checker = { enabled = true },
+  ui = {
+    border = "rounded",
+  },
+  spec = {
+    -- import your plugins
+    { import = "plugins" }, -- this will recursively load lua/plugins/**/*
+    { import = "core" }
+  },
+})
