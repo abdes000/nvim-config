@@ -18,25 +18,24 @@ vim.opt.rtp:prepend(lazypath)
 
 
 
--- Setup lazy.nvim
-require("lazy").setup({
-    defaults = {
-      lazy = true, -- load plugins lazily by default
-    },
-    install = {
-      colorscheme = { "tokyonight", "gruvbox" },
-    },
-    checker = { enabled = true },
-    ui = {
-      border = "rounded",
-    },
-    spec = {
-      -- import your plugins
-      { import = "plugins" },
-      { import = "core"}
-    },
-  })
+-- -- Setup lazy.nvim
+-- require("lazy").setup({
+--     defaults = {
+--       lazy = true, -- load plugins lazily by default
+--     },
+--     install = {
+--       colorscheme = { "tokyonight", "gruvbox" },
+--     },
+--     checker = { enabled = true },
+--     ui = {
+--       border = "rounded",
+--     },
+--     spec = {
+--       -- import your plugins
+--       { import = "plugins" },
+--       { import = "core"}
+--     },
+--   })
 
 -- Initialize lazy.nvim with collected specs
 require("lazy").setup("plugins")
-require("plugins")
