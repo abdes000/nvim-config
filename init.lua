@@ -1,65 +1,35 @@
--- -- Bootstrap lazy.nvim plugin manager
--- local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
--- if not (vim.uv or vim.loop).fs_stat(lazypath) then
---   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
---   local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
---   if vim.v.shell_error ~= 0 then
---     vim.api.nvim_echo({
---       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
---       { out,                            "WarningMsg" },
---       { "\nPress any key to exit..." },
---     }, true, {})
---     vim.fn.getchar()
---     os.exit(1)
---   end
--- end
--- vim.opt.rtp:prepend(lazypath)
-
--- -- Setup lazy.nvim
--- require("lazy").setup({
---   defaults = {
---     lazy = true, -- load plugins lazily by default
---   },
---   install = {
---     colorscheme = { "tokyonight", "gruvbox" },
---   },
---   checker = { enabled = true },
---   ui = {
---     border = "rounded",
---   },
---   spec = {
---     -- import your plugins
---     { import = "plugins" }, -- this will recursively load lua/plugins/**/*
---     { import = "core" }
---   },
--- })
-
-
-
+-- Bootstrap lazy.nvim plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out,                            "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
 vim.opt.rtp:prepend(lazypath)
-vim.g.mapleader = " "
--- local opts = {}
 
+-- Setup lazy.nvim
 require("lazy").setup({
-  "folke/which-key.nvim",
-  { "folke/neoconf.nvim", cmd = "Neoconf" },
-  "folke/neodev.nvim",
-})
-require("lazy").stats()
-require("lazy").setup({
+  defaults = {
+    lazy = true, -- load plugins lazily by default
+  },
+  install = {
+    colorscheme = { "tokyonight", "gruvbox" },
+  },
+  checker = { enabled = true },
+  ui = {
+    border = "rounded",
+  },
   spec = {
-  {"plugins"},
-  {"core"}
-},
+    -- import your plugins
+    { import = "plugins" }, -- this will recursively load lua/plugins/**/*
+    { import = "core" }
+  },
 })
