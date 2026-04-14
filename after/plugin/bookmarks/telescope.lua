@@ -1,5 +1,5 @@
 -- lua/bookmarks/telescope.lua
-local storage = require("bookmarks.storage")
+local storage = require("storage")
 local pickers = require("telescope.pickers")
 local finders = require("telescope.finders")
 local conf = require("telescope.config").values

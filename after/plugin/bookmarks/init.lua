@@ -1,6 +1,6 @@
 -- lua/bookmarks/init.lua
 local M = {}
-local storage = require("bookmarks.storage")
+local storage = require("storage")
 
 -- Add bookmark at current line
 function M.add_bookmark()
