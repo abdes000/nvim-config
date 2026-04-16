@@ -1,4 +1,4 @@
-require("options")
-require("keymaps")
-require("autocommands")
-require("bootstrap")
+require("core.options")
+require("core.keymaps")
+require("core.autocommands")
+require("core.bootstrap")
