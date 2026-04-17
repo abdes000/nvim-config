@@ -1,6 +1,6 @@
 return   {
     'ph1losof/ecolog.nvim',
-    branch = "v1",
+    branch = "beta",
     keys = {
       { '<leader>e', '', desc = '+ecolog', mode = { 'n', 'v' } },
       { '<leader>el', '<Cmd>EcologShelterLinePeek<cr>', desc = 'Peek line' },

@@ -1,7 +1,8 @@
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  opts = function(_, opts)
+  opts = {},
+  config = function()
     local trouble = require("trouble")
     local symbols = trouble.statusline({
       mode = "lsp_document_symbols",
@@ -17,11 +18,9 @@ return {
       symbols.get,
       cond = symbols.has,
     })
-  end,
-  config = function()
     local hot = {
-          'Reloader',
-        }
+      'Reloader',
+    }
     require('lualine').setup({
       options = {
         icons_enabled = true,

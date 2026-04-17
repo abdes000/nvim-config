@@ -2,7 +2,7 @@ return {
     "dzfrias/arena.nvim",
     event = "BufWinEnter",
     -- Calls `.setup()` automatically
-    config = true,
+    -- config = true,
     opts = {
         -- Maxiumum number of files that the arena window can contain, or `nil` for
         -- an unlimited amount

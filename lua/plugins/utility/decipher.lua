@@ -1,5 +1,4 @@
 return {
-    'MisanthropicBit/decipher.nvim',
     "MisanthropicBit/decipher.nvim",
     keys = {
         -- Encode/Decode with Base64

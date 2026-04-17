@@ -1,10 +1,10 @@
 return {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
-    ---@module "ibl"
-    ---@type ibl.config
     opts = {},
     config = function()
+      ---@module "ibl"
+      ---@type ibl.config
         local highlight = {
             "RainbowRed",
             "RainbowYellow",

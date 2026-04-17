@@ -1,5 +1,4 @@
 return {
-    {
         "soulis-1256/eagle.nvim",
         opts = {
             show_headers = true,
@@ -35,5 +34,4 @@ return {
             vim.o.mousemoveevent = true
             vim.keymap.set('n', '<Tab>', ':EagleWin<CR>', { noremap = true, silent = true })
         end,
-    },
 }

@@ -1,23 +1,23 @@
 return {
     'stevearc/overseer.nvim',
-    ---@module 'overseer'
-    ---@type overseer.SetupOpts
     opts = {
-        strategy = "toggleterm",   -- run tasks inside toggleterm
-        templates = { "builtin" }, -- use built-in templates for many languages
+      strategy = "toggleterm",   -- run tasks inside toggleterm
+      templates = { "builtin" }, -- use built-in templates for many languages
         task_list = {
-            direction = "bottom",
+          direction = "bottom",
             min_height = 25,
             max_height = 25,
             default_detail = 1,
-        },
-        -- Default runner for all languages
+          },
+          -- Default runner for all languages
         default_template = {
-            cmd = { "echo", "No template found for this filetype" },
+          cmd = { "echo", "No template found for this filetype" },
         },
-    },
-    config = function(_, opts)
+      },
+      config = function(_, opts)
         require("overseer").setup(opts)
+        ---@module 'overseer'
+        ---@type overseer.SetupOpts
         -- Task management
         vim.keymap.set("n", "<leader>ot", "<cmd>OverseerToggle<cr>", { desc = "Overseer: Toggle task list" })
         vim.keymap.set("n", "<leader>or", "<cmd>OverseerRun<cr>", { desc = "Overseer: Run task" })

@@ -2,7 +2,6 @@ return {
     "sphamba/smear-cursor.nvim",
 
     --Fire Hazard
-    {
         -- Smear cursor when switching buffers or windows.
         smear_between_buffers = true,
 
@@ -41,8 +40,7 @@ return {
             particle_damping = 0.15,
             particle_gravity = -50,
             min_distance_emit_particles = 0,
-        }
-    },
+        },
     config = function()
         -- All the following options can be set using the `setup` function.
         -- Refer to the README for more information.

@@ -1,6 +1,6 @@
 return {
     "necrom4/calcium.nvim",
-    cmd = { "Calcium" },
+    cmd = "Calcium",
     opts = {
         -- default configuration
         notifications = true,                -- notify result
